@@ -40,12 +40,11 @@ sub trash_all_empty_files {
 
     my %args = @_;
 
-    my $res = App::FileRemoveUtils::delete_all_empty_files(-dry_run=>1);
-    return $res unless $res->[0] == 200;
+    my $files = App::FileRemoveUtils::list_all_empty_files();
 
     File::Trash::Undoable::trash_files(
         %args,
-        files => $res->[3]{'func.files'},
+        files => $files,
     );
 }
 
