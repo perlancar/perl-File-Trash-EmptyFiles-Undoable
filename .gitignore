@@ -2,3 +2,4 @@ File-Trash-EmptyFiles-Undoable-*
 .build
 *~
 nytprof*
+.DS_Store
